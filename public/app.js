@@ -1,5 +1,6 @@
 import { NOISE_NAMES, NOISE_COLORS, NOISE_TWEETS, NOISE_NOTES } from './noise.js';
 import { ICON, hydrateIcons } from './icons.js';
+import { renderShareCard, shareText, tweetUrl, saveBlob, copyImage } from './share.js';
 
 const $ = (id) => document.getElementById(id);
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -559,8 +560,33 @@ function showResult(res) {
     <div class="bigTime ${ok ? '' : 'bad'}">${ok ? fmt(res.ms) : '未完成'}</div>
     <div class="compare">${lines.join(' · ')}</div>
     ${splitHtml}
-    <div class="btnRow"><button class="primary big" type="button" data-again>再来一局</button><button class="ghost" type="button" data-page="ladder">天梯</button></div>`;
+    <div class="btnRow"><button class="primary big" type="button" data-again>再来一局</button>${res.result === 'success' ? '<button class="ghost share" type="button" data-share disabled>分享到推特</button><button class="ghost" type="button" data-save disabled>保存图片</button>' : ''}<button class="ghost" type="button" data-page="ladder">天梯</button></div>`;
   $('result').hidden = false;
+  S.share = null;
+  if (res.result === 'success') prepareShare(res);
+}
+
+// Drawn ahead of the click, so writing to the clipboard stays inside the click's permission.
+async function prepareShare(res) {
+  const roundId = S.round?.id;
+  try {
+    const blob = await renderShareCard({ nickname: S.nickname, ms: res.ms, splits: res.splits, rank: res.rank });
+    if (S.round?.id !== roundId || !blob) return;
+    S.share = { blob, text: shareText({ ms: res.ms, rank: res.rank }), name: `sniper-duck-${(res.ms / 1000).toFixed(2)}s.png` };
+    document.querySelectorAll('[data-share],[data-save]').forEach((b) => { b.disabled = false; });
+  } catch {
+    toast('成绩图片生成失败');
+  }
+}
+
+async function shareToX() {
+  if (!S.share) return;
+  const { blob, text, name } = S.share;
+  const copied = await copyImage(blob);
+  if (!copied) saveBlob(blob, name);
+  const win = window.open(tweetUrl(text), '_blank');
+  if (!win) return toast('浏览器拦截了新窗口，请允许弹窗后再试');
+  toast(copied ? '图片已复制，在发帖框按 Cmd+V 粘贴' : '图片已下载，请在发帖框手动添加', true);
 }
 
 /* ---------- pages ---------- */
@@ -636,6 +662,8 @@ document.addEventListener('click', (e) => {
   if (zone) return buy(zone.dataset.buy, e.timeStamp);
   if (target.closest('[data-oldcoin]')) return toast('这是老币，要买的是新出现的第一个');
   if (target.closest('[data-again]')) return startRound();
+  if (target.closest('[data-share]')) return shareToX();
+  if (target.closest('[data-save]')) { if (S.share) saveBlob(S.share.blob, S.share.name); return; }
   const board = target.closest('[data-board]');
   if (board) { S.board = board.dataset.board; return loadLadder(); }
   const row = target.closest('[data-round]');

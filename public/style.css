@@ -390,3 +390,8 @@ tr.mine td { background: #10241a; }
 .logo { font-size: 20px; letter-spacing: 1px; gap: 8px; }
 .logo img { width: 32px; height: 32px; display: block; }
 .joinLogo { width: 48px; height: 48px; display: inline-block; vertical-align: middle; margin-right: 10px; }
+.btnRow { flex-wrap: wrap; }
+.btnRow .ghost { white-space: nowrap; }
+.ghost:disabled { opacity: .5; cursor: default; }
+.ghost.share { background: #1d9bf0; border-color: #1d9bf0; color: #fff; font-weight: 600; }
+.toast { z-index: 60; }
