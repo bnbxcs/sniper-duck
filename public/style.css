@@ -395,3 +395,7 @@ tr.mine td { background: #10241a; }
 .ghost:disabled { opacity: .5; cursor: default; }
 .ghost.share { background: #1d9bf0; border-color: #1d9bf0; color: #fff; font-weight: 600; }
 .toast { z-index: 60; }
+.pauseIc { display: none !important; color: #f7a23b; }
+.colHead.paused .pauseIc { display: block !important; }
+.colHead.paused .filterBtn > i:first-child { display: none; }
+.colHead.paused .filterBtn::after { display: none; }

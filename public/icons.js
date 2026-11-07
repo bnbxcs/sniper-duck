@@ -18,6 +18,7 @@ export const ICON = {
   mute: s('<path d="M4 10v4h3l5 4V6L7 10z"/><path d="M16 9l5 6M21 9l-5 6"/>'),
   eyeOff: s('<path d="M3 3l18 18"/><path d="M10 6a9 9 0 0 1 11 6 11 11 0 0 1-3 4M6 8a11 11 0 0 0-3 4 9 9 0 0 0 12 5"/>'),
   filter: s('<path d="M4 5h16l-6 7v6l-4 2v-8z"/>'),
+  pause: f('<rect x="6" y="4" width="4.500" height="16" rx="1"/><rect x="13.500" y="4" width="4.500" height="16" rx="1"/>'),
   up: s('<path d="M6 15l6-6 6 6"/>'),
   down: s('<path d="M6 9l6 6 6-6"/>'),
   expand: s('<path d="M14 4h6v6M20 4l-7 7M10 20H4v-6M4 20l7-7"/>'),

@@ -172,7 +172,15 @@ function visibleNew() {
   // Newest on top: the first coin sinks as later ones arrive.
   return [...S.tokens.filter((t) => t.shown), ...S.noiseNew].sort((a, b) => b.born - a.born).filter(matches).slice(0, 30);
 }
+const pending = [];
+function setNewHover(on) {
+  S.newHover = on;
+  $('colNew').querySelector('.colHead').classList.toggle('paused', on);
+  if (on) return;
+  pending.splice(0).forEach(pushNew);
+}
 function renderNew() {
+  pending.length = 0; // A full redraw already includes anything that was held back.
   const list = visibleNew();
   $('bodyNew').innerHTML = list.length
     ? list.map(cardHtml).join('')
@@ -181,6 +189,12 @@ function renderNew() {
 function pushNew(t) {
   if (!matches(t)) return;
   const body = $('bodyNew');
+  // Hovering holds the list still. An empty list still fills, so a player waiting with the
+  // mouse over the column does see the first coin arrive.
+  if (S.newHover && body.querySelector('.c')) {
+    pending.push(t);
+    return;
+  }
   if (body.querySelector('.empty')) body.innerHTML = '';
   body.insertAdjacentHTML('afterbegin', cardHtml(t));
   while (body.children.length > 30) body.lastElementChild.remove();
@@ -741,6 +755,8 @@ live($('kw'), applyKeyword);
 live($('searchInput'), runSearch);
 
 $('monList').addEventListener('mouseenter', () => { S.monHover = true; $('monPaused').textContent = '已暂停'; });
+$('bodyNew').addEventListener('mouseenter', () => setNewHover(true));
+$('bodyNew').addEventListener('mouseleave', () => setNewHover(false));
 $('monList').addEventListener('mouseleave', () => { S.monHover = false; $('monPaused').textContent = ''; });
 
 window.addEventListener('beforeunload', (e) => {
