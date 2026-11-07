@@ -75,7 +75,7 @@ npm test
 
 ## 用自己的图片出题
 
-内置 20 道题在 `scenarios/scenarios.json`，图片是原创的，由 `npm run images` 生成。
+内置 20 道题在 `scenarios/scenarios.json`。「躺枪」用的是网络流行的表情包，版权归原作者所有；其余图片是原创的，由 `npm run images` 生成。
 
 要加自己的题，把图片和同名描述放进 `data/local-scenarios/`，重启后生效。这个目录不会提交到 git。
 

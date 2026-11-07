@@ -1,5 +1,5 @@
 [
-  {"id":"s01","name":"躺枪","pinyin":"tǎng qiāng","en":"Caught in the crossfire","altEn":["The Fallen Hero","Innocent bystander"],"meaning":"没招谁没惹谁也被牵连，多用来自嘲或调侃。","visual":"一个小人趴在地上，身上插着一支箭。","nearNames":["躺抢","趟枪","中枪"]},
+  {"id":"s01","imageFile":"s01.png","name":"躺枪","pinyin":"tǎng qiāng","en":"Caught in the crossfire","altEn":["The Fallen Hero","Lying down and shot","Innocent bystander"],"meaning":"没招谁没惹谁也被牵连，多用来自嘲或调侃。","visual":"一个卡通人物趴在地上，身上中箭流血，表情却很淡定。","nearNames":["躺抢","趟枪","中枪"]},
   {"id":"s02","name":"扎心","pinyin":"zhā xīn","en":"That really hurts","altEn":["Heartbreaking","Stabbed in the heart"],"meaning":"一句话说到痛处，让人难受却无法反驳。","visual":"一颗红心上插着一把剑，旁边的小人表情苦涩。","nearNames":["扎新","札心","戳心"]},
   {"id":"s03","name":"破防","pinyin":"pò fáng","en":"Defense broken","altEn":["Emotional damage","Guard down"],"meaning":"心理防线被击穿，情绪一下子绷不住。","visual":"小人举着一面裂成两半的盾牌。","nearNames":["破房","迫防","失防"]},
   {"id":"s04","name":"摆烂","pinyin":"bǎi làn","en":"Let it rot","altEn":["Giving up on purpose","Rot mode"],"meaning":"明知情况不好，干脆不再努力，任其发展。","visual":"小人坐在垃圾桶里，双眼无神。","nearNames":["摆难","败烂","放烂"]},

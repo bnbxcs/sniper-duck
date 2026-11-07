@@ -31,8 +31,6 @@ const body = (x, y, color = '#4f6bd8') =>
 const stand = (o = {}, c) => `${body(160, 158, c)}${head(160, 110, o)}`;
 
 const art = {
-  s01: `<ellipse cx="160" cy="262" rx="130" ry="14" fill="#d7d9de"/><rect x="108" y="196" width="150" height="56" rx="26" fill="#4f6bd8" stroke="${INK}" stroke-width="4"/>${head(92, 200, { eye: 'flat', mouth: 'smile' })}
-<path d="M170 240L250 130" stroke="#7b4a21" stroke-width="7"/><path d="M250 130l-22 4 12 16z" fill="#7b4a21"/><path d="M155 252q12-22 34-14q6 22-14 28z" fill="#d3202f"/>`,
   s02: `${head(90, 130, { eye: 'flat', mouth: 'sad' })}<path d="M215 215c-60-40-60-90-25-96c15-2 25 12 25 18c0-6 10-20 25-18c35 6 35 56-25 96z" fill="#e23b4e" stroke="${INK}" stroke-width="4"/>
 <path d="M270 70L210 170" stroke="#8b93a5" stroke-width="10"/><path d="M262 62l20 12" stroke="${INK}" stroke-width="10"/>`,
   s03: `${stand({ eye: 'swirl', mouth: 'open' })}<path d="M222 120h60v60q0 38-30 56q-30-18-30-56z" fill="#8ea6c8" stroke="${INK}" stroke-width="4"/><path d="M252 118l-12 34 20 18-14 52" stroke="#fff" stroke-width="7" fill="none"/>`,

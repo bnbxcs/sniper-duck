@@ -42,7 +42,7 @@ export function loadScenarios(root = ROOT) {
   const list = JSON.parse(readFileSync(join(root, 'scenarios', 'scenarios.json'), 'utf8'));
   const images = new Map();
   for (const s of list) {
-    images.set(s.id, join(root, 'scenarios', 'img', `${s.id}.svg`));
+    images.set(s.id, join(root, 'scenarios', 'img', s.imageFile ?? `${s.id}.svg`));
   }
   // Your own images stay out of git: data/local-scenarios/<any>.json + its image.
   const localDir = join(root, 'data', 'local-scenarios');

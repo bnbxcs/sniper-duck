@@ -175,8 +175,9 @@ test('built-in scenarios are complete and cannot collide with trench noise', () 
     for (const noise of NOISE_NAMES) assert.ok(!noise[0].includes(s.name), `${noise[0]} contains ${s.name}`);
   }
   for (const s of builtin) {
-    const file = new URL(`../scenarios/img/${s.id}.svg`, import.meta.url);
+    const file = new URL(`../scenarios/img/${s.imageFile ?? `${s.id}.svg`}`, import.meta.url);
     assert.ok(existsSync(file), s.id);
+    if (s.imageFile) continue;
     const svg = readFileSync(file, 'utf8');
     assert.ok(!svg.includes(s.name), `${s.id} image shows its name`);
   }
