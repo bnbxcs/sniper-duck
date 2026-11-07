@@ -1,0 +1,22 @@
+[
+  {"id":"s01","name":"躺枪","pinyin":"tǎng qiāng","en":"Caught in the crossfire","altEn":["The Fallen Hero","Innocent bystander"],"meaning":"没招谁没惹谁也被牵连，多用来自嘲或调侃。","visual":"一个小人趴在地上，身上插着一支箭。","nearNames":["躺抢","趟枪","中枪"]},
+  {"id":"s02","name":"扎心","pinyin":"zhā xīn","en":"That really hurts","altEn":["Heartbreaking","Stabbed in the heart"],"meaning":"一句话说到痛处，让人难受却无法反驳。","visual":"一颗红心上插着一把剑，旁边的小人表情苦涩。","nearNames":["扎新","札心","戳心"]},
+  {"id":"s03","name":"破防","pinyin":"pò fáng","en":"Defense broken","altEn":["Emotional damage","Guard down"],"meaning":"心理防线被击穿，情绪一下子绷不住。","visual":"小人举着一面裂成两半的盾牌。","nearNames":["破房","迫防","失防"]},
+  {"id":"s04","name":"摆烂","pinyin":"bǎi làn","en":"Let it rot","altEn":["Giving up on purpose","Rot mode"],"meaning":"明知情况不好，干脆不再努力，任其发展。","visual":"小人坐在垃圾桶里，双眼无神。","nearNames":["摆难","败烂","放烂"]},
+  {"id":"s05","name":"躺平","pinyin":"tǎng píng","en":"Lying flat","altEn":["Lie flat forever","Opt out"],"meaning":"不再追求世俗意义上的成功，选择低欲望生活。","visual":"小人平躺在一张床垫上睡觉。","nearNames":["淌平","躺瓶","平躺"]},
+  {"id":"s06","name":"吃瓜","pinyin":"chī guā","en":"Melon eating","altEn":["Watching the drama","Melon crowd"],"meaning":"站在一旁看热闹，不参与也不表态。","visual":"小人捧着一块西瓜，眼睛瞄向旁边。","nearNames":["吃呱","痴瓜","啃瓜"]},
+  {"id":"s07","name":"打工人","pinyin":"dǎ gōng rén","en":"Wage worker","altEn":["Morning, worker","Office soldier"],"meaning":"上班族的自称，带着自嘲和一点互相打气。","visual":"小人戴着安全帽，拎着公文包。","nearNames":["打功人","打工仔","搬砖人"]},
+  {"id":"s08","name":"社死","pinyin":"shè sǐ","en":"Social death","altEn":["Dying of embarrassment","So awkward"],"meaning":"在别人面前出了大丑，尴尬到想消失。","visual":"小人满脸通红，用双手捂着脸。","nearNames":["设死","社恐","社亡"]},
+  {"id":"s09","name":"裂开","pinyin":"liè kāi","en":"Cracked up","altEn":["My head split","Falling apart"],"meaning":"遇到离谱的事情，整个人都崩溃了。","visual":"小人的头上有一道闪电状的裂缝。","nearNames":["烈开","劣开","炸开"]},
+  {"id":"s10","name":"真香","pinyin":"zhēn xiāng","en":"Smells so good","altEn":["I take it back","Delicious after all"],"meaning":"先嘴硬拒绝，后来自己打脸，觉得很好。","visual":"小人一手拿筷子，一手捧碗大口吃饭。","nearNames":["甄香","针香","好香"]},
+  {"id":"s11","name":"上头","pinyin":"shàng tóu","en":"Rush to the head","altEn":["Totally hooked","Tilted up"],"meaning":"情绪或兴趣冲昏头脑，停不下来。","visual":"小人头顶冒着红色蒸汽，眼睛变成了螺旋。","nearNames":["尚头","上投","冲头"]},
+  {"id":"s12","name":"内卷","pinyin":"nèi juǎn","en":"Involution","altEn":["Rat race","Pointless competition"],"meaning":"大家投入越来越多，回报却没有增加。","visual":"小人在一个大螺旋里面奔跑。","nearNames":["内绢","内圈","互卷"]},
+  {"id":"s13","name":"牛马","pinyin":"niú mǎ","en":"Ox and horse","altEn":["Beast of burden","Working animal"],"meaning":"打工者的自嘲，形容自己像牲口一样辛苦。","visual":"小人头上长着牛角，身后拉着一辆小车。","nearNames":["牛吗","牛码","骡马"]},
+  {"id":"s14","name":"下头","pinyin":"xià tóu","en":"Total turn-off","altEn":["Mood killer","So cringe"],"meaning":"对某人或某事一下子失去好感和兴趣。","visual":"小人看着一个向下的绿色箭头，一脸嫌弃。","nearNames":["夏头","下投","败兴"]},
+  {"id":"s15","name":"夺笋","pinyin":"duó sǔn","en":"So many bamboo shoots","altEn":["That was harsh","Savage words"],"meaning":"谐音「多损」，调侃别人说话太刻薄。","visual":"小人抱着一根很大的竹笋往外跑。","nearNames":["多笋","夺损","抢笋"]},
+  {"id":"s16","name":"栓Q","pinyin":"shuān Q","en":"Thank you, speechless","altEn":["Thanks a lot, really","Sank you"],"meaning":"谐音 thank you，表达无语和无奈。","visual":"小人双手合十，嘴巴是一条直线。","nearNames":["拴Q","栓K","三Q"]},
+  {"id":"s17","name":"芭比Q","pinyin":"bā bǐ Q","en":"It is all over","altEn":["Totally barbecued","Done for"],"meaning":"谐音 barbecue，表示事情彻底完蛋了。","visual":"小人站在烧烤架旁，身边冒着火苗。","nearNames":["八比Q","巴比Q","烧烤Q"]},
+  {"id":"s18","name":"绝绝子","pinyin":"jué jué zǐ","en":"Absolutely amazing","altEn":["Top tier","Beyond words"],"meaning":"夸张地表达太好了，有时也用来反讽。","visual":"小人双眼发光，周围飘着金色的星星。","nearNames":["绝绝紫","决决子","绝了子"]},
+  {"id":"s19","name":"蚌埠住了","pinyin":"bèng bù zhù le","en":"Cannot hold it in","altEn":["Holding back laughter","Bengbu held"],"meaning":"谐音「绷不住了」，指忍不住笑或者情绪失控。","visual":"一只蚌壳张开，里面的小人哈哈大笑。","nearNames":["蚌埠往了","绷不住了","蚌住了"]},
+  {"id":"s20","name":"凡尔赛","pinyin":"fán ěr sài","en":"Humble bragging","altEn":["Versailles literature","Quiet flex"],"meaning":"用不经意的语气炫耀自己，假装在抱怨。","visual":"小人戴着皇冠，一脸无奈地摊开双手。","nearNames":["梵尔赛","凡尔塞","范尔赛"]}
+]
