@@ -262,7 +262,12 @@ async function startRound() {
   unlockAudio();
   try {
     const round = await api('POST', '/api/rounds');
+    const restarted = S.phase === 'idle' || S.phase === 'live';
     clearRoundTimers();
+    // Tweets from the last round belong to it: leaving them would look like nothing happened,
+    // and their search buttons no longer lead anywhere.
+    document.querySelectorAll('#monList .tw').forEach((el) => { if (el.querySelector('.twImg')) el.remove(); });
+    if (restarted) toast('已重新开始，等新的推文', true);
     Object.assign(S, { round, phase: 'idle', done: {}, tokens: [], near: [], keyword: '', sentKeyword: '', sentQuery: '', trace: [], buying: false, q: Promise.resolve() });
     $('kw').value = '';
     $('kw').parentElement.classList.remove('active');
