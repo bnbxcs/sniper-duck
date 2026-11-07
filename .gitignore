@@ -1,0 +1,6 @@
+node_modules/
+.DS_Store
+*.log
+# Database and your own (possibly copyrighted) scenario images stay local.
+data/*
+!data/.gitkeep
