@@ -567,7 +567,7 @@ function showResult(res) {
   const lines = [];
   if (ok) {
     const delta = res.ms - VIDEO_REF_MS;
-    lines.push(`比视频${delta <= 0 ? '快' : '慢'} <b>${fmt(Math.abs(delta))}</b>`);
+    lines.push(`比 clukz ${delta <= 0 ? '快' : '慢'} <b>${(Math.abs(delta) / 1000).toFixed(2)}</b> 秒`);
     if (res.best != null) lines.push(`最佳 <b>${fmt(res.best)}</b>`);
     if (res.rank) lines.push(`天梯第 <b>${res.rank}</b> 名`);
     if (res.waited > 0) lines.push(`等币上线 ${fmt(res.waited)}`);

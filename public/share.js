@@ -74,7 +74,7 @@ export async function renderShareCard({ nickname, ms, splits, rank }) {
   ctx.fillStyle = '#cccccc';
   ctx.font = `500 26px ${FONT}`;
   const delta = ms - VIDEO_REF_MS;
-  ctx.fillText(`从推文出现到点击买入 · 比参考视频${delta <= 0 ? '快' : '慢'} ${secs(Math.abs(delta))} 秒`, 76, 356);
+  ctx.fillText(`从推文出现到点击买入 · 比 clukz ${delta <= 0 ? '快' : '慢'} ${secs(Math.abs(delta))} 秒`, 76, 356);
 
   const barX = 72;
   const barW = W - 144;
