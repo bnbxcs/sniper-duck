@@ -399,3 +399,7 @@ tr.mine td { background: #10241a; }
 .colHead.paused .pauseIc { display: block !important; }
 .colHead.paused .filterBtn > i:first-child { display: none; }
 .colHead.paused .filterBtn::after { display: none; }
+.result.withCard { width: min(720px, 100%); }
+.cardPreview { aspect-ratio: 16 / 9; background: var(--panel); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+.cardPreview img { display: block; width: 100%; height: 100%; }
+.result.withCard .btnRow .ghost { padding: 11px 14px; }
