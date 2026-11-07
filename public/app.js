@@ -679,6 +679,8 @@ document.addEventListener('click', (e) => {
     e.preventDefault();
     $('result').hidden = true;
     if ((S.phase === 'live' || S.phase === 'idle') && nav.dataset.page !== 'trench') return toast('打完这一局再看');
+    // The nav and logo leave the image search tab the same way its own close button does.
+    if (nav.dataset.page === 'trench' && S.lensOpen) closeLens();
     showPage(nav.dataset.page);
   }
 });
