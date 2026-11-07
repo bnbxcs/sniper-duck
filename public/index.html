@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>狙击鸭</title>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <span class="logo" data-page="trench" role="link" title="返回战壕"><img src="/logo.svg" alt="">狙击鸭</span>
+  <nav>
+    <a data-page="trench" class="on" href="#">战壕</a>
+    <a data-page="ladder" href="#">天梯</a>
+    <a data-page="history" href="#">我的记录</a>
+    <span class="deco">热门</span><span class="deco">喊单</span><span class="deco">跟单</span><span class="deco">监控</span><span class="deco">追踪</span><span class="deco wide">资产</span><span class="deco wide">奖励</span><span class="deco wide">猜涨跌</span>
+  </nav>
+  <span class="grow"></span>
+  <span class="sim">模拟环境 · 不产生真实交易</span>
+  <button class="gsearch" id="openSearch" type="button"><i data-ic="search"></i><span>搜索代币名，合约，钱包</span><kbd>/</kbd></button>
+  <span class="topLink wide"><i data-ic="rocket"></i>Cooking</span>
+  <span class="topLink wide"><i data-ic="book"></i>API</span>
+  <span class="topLink wide"><i data-ic="wallet"></i>APP</span>
+  <span class="topChain"><i data-ic="coin"></i>BSC<i data-ic="down"></i></span>
+  <span class="topIcon"><i data-ic="star"></i></span>
+  <span class="topIcon"><i data-ic="bell"></i></span>
+  <label class="hintToggle"><input type="checkbox" id="hintToggle"> 提示</label>
+  <span class="me" id="me"></span>
+  <span class="timer" id="timer">--:--.--</span>
+</header>
+
+<div class="ticker" id="ticker"></div>
+
+<main class="main">
+  <aside class="mon">
+    <div class="monHead"><b>推特监控</b><span>TG监控</span><span class="grow"></span><em id="monPaused"></em>
+      <i class="rocketIc" data-ic="rocket"></i><i data-ic="speaker"></i><i data-ic="up"></i><i data-ic="expand"></i><i data-ic="windows"></i><i data-ic="close"></i></div>
+    <div class="monTabs"><b>我的</b><span>精选</span><span>推荐</span><span class="grow"></span><i data-ic="image"></i></div>
+    <div class="monFilter">
+      <span class="box"></span><span>只看CA</span><i data-ic="gear"></i><i data-ic="hash"></i><i data-ic="image"></i>
+      <span class="grow"></span>
+      <span class="fnum"><i data-ic="filter"></i><b>14</b></span>
+      <span class="monSearch"><i data-ic="search"></i>CA / Symbol / X URL</span>
+    </div>
+    <div class="monList" id="monList"></div>
+  </aside>
+
+  <section class="work">
+    <div class="tabs" id="tabs" hidden>
+      <button class="tab" id="tabTrench" type="button">战壕</button>
+      <span class="tab on">图片搜索 <button id="tabClose" type="button" aria-label="关闭搜图页">✕</button></span>
+    </div>
+    <div class="trench" id="trench">
+      <div class="trenchBar">
+        <i class="helmet" data-ic="helmet"></i><b>战壕</b>
+        <span class="chainBtn"><i data-ic="solana"></i></span><span class="chainBtn on"><i data-ic="coin"></i></span><span class="chainBtn"><i data-ic="leaf"></i></span><span class="chainBtn"><i data-ic="grid"></i></span>
+        <span class="chainNum"><u>1</u><i data-ic="down"></i></span>
+        <button class="startBtn" id="startBtn" type="button">开始</button>
+        <span class="grow"></span>
+        <div class="hint" id="hint"></div>
+        <div class="steps" id="steps"></div>
+      </div>
+      <div class="cols">
+        <div class="col" id="colNew">
+          <div class="colHead"><b>新创建</b><span class="grow"></span>
+            <label class="kw"><i data-ic="search"></i><input id="kw" placeholder="关键词1，…" autocomplete="off" spellcheck="false"></label>
+            <span class="amt"><i data-ic="coin"></i>0.48</span>
+            <span class="pgroup"><span>P1</span><span class="on">P2</span><span>P3</span></span>
+            <i class="hi" data-ic="mute"></i><i class="hi" data-ic="eyeOff"></i>
+            <button class="filterBtn" id="openFilter" type="button" title="筛选" aria-label="筛选"><i data-ic="filter"></i></button>
+          </div>
+          <div class="colBody" id="bodyNew"></div>
+        </div>
+        <div class="col">
+          <div class="colHead"><b>即将打满</b><span class="pctmc">% MC</span><span class="grow"></span>
+            <span class="kw fake"><i data-ic="search"></i><em>关键词1，…</em></span>
+            <span class="amt"><i data-ic="coin"></i>0</span>
+            <span class="pgroup"><span>P1</span><span class="on">P2</span><span>P3</span></span>
+            <i class="hi" data-ic="speaker"></i><i class="hi" data-ic="eyeOff"></i><i class="hi" data-ic="filter"></i>
+          </div>
+          <div class="colBody" id="bodySoon"></div>
+        </div>
+        <div class="col">
+          <div class="colHead"><b>已开盘</b><span class="grow"></span>
+            <span class="kw fake"><i data-ic="search"></i><em>关键词1，…</em></span>
+            <span class="amt"><i data-ic="coin"></i>0</span>
+            <span class="pgroup"><span>P1</span><span class="on">P2</span><span>P3</span></span>
+            <i class="hi" data-ic="speaker"></i><i class="hi" data-ic="eyeOff"></i><i class="hi" data-ic="filter"></i>
+          </div>
+          <div class="colBody" id="bodyOpen"></div>
+        </div>
+      </div>
+    </div>
+    <div class="lens" id="lens" hidden>
+      <div class="lensBar"><img id="lensThumb" alt=""><span>添加搜索内容</span></div>
+      <div class="lensNav"><span>AI 模式</span><b>全部</b><span>完全匹配</span><span>相似图片</span></div>
+      <div class="lensDoc" id="lensDoc"></div>
+    </div>
+    <div class="page" id="ladder" hidden></div>
+    <div class="page" id="history" hidden></div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span class="giga"><i data-ic="bolt"></i>Giga</span>
+  <span class="fi"><i data-ic="gear"></i></span>
+  <span class="fi"><i data-ic="bell"></i>钱包追踪</span>
+  <span class="fi on"><i data-ic="feather"></i>社媒监控</span>
+  <span class="fi"><i data-ic="rocket"></i>喊单</span>
+  <span class="fi"><i data-ic="friends"></i>好友</span>
+  <span class="fi"><i data-ic="chart"></i>持仓</span>
+  <span class="fi"><i data-ic="starFill"></i>收藏</span>
+  <span class="fi wide"><i data-ic="wallet"></i>交易</span>
+  <span class="fi"><i data-ic="fire"></i>热门</span>
+  <span class="fi"><i data-ic="signal"></i>盈亏</span>
+  <span class="fi wide"><i data-ic="signal"></i>信号</span>
+  <span class="price o">$76.0K</span><span class="price g">$90.18</span><span class="price y">$695.32</span><span class="price b">$2.24K</span>
+  <span class="grow"></span>
+  <span class="stable"><b>Stable</b> 28 MS · 235 FPS</span>
+  <span class="fi">About<i data-ic="down"></i></span>
+</footer>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<div class="scrim" id="searchModal" hidden>
+  <div class="modal search">
+    <div class="searchHead"><input id="searchInput" placeholder="搜索代币名" autocomplete="off" spellcheck="false"><kbd>Esc</kbd></div>
+    <div class="searchNote" id="searchNote">粘贴名字，确认 OG</div>
+    <div class="searchList" id="searchList"></div>
+  </div>
+</div>
+
+<div class="scrim" id="filterModal" hidden>
+  <div class="modal filter">
+    <div class="filterHead"><b>筛选</b><button id="filterClose" type="button" aria-label="关闭"><i data-ic="close"></i></button></div>
+    <div class="filterTabs"><b>新创建</b><span>即将打满</span><span>已开盘</span><span class="sep"></span><span>已保存</span><span>链过滤</span></div>
+    <div class="filterGrid">
+      <label>搜索关键词<input id="filterInput" placeholder="关键词1，关键词2…" autocomplete="off" spellcheck="false"></label>
+      <label>排除关键词<input disabled placeholder="关键词1，关键词2…"></label>
+      <label>搜索X账号<input disabled placeholder="账号1，账号2…"></label>
+      <label>搜索开发者钱包<input disabled placeholder="钱包1，钱包2…"></label>
+    </div>
+    <div class="filterSec"><b>平台</b><button class="filterAll" type="button">取消全选</button></div>
+    <div class="filterChips">
+      <span class="c-pink">Genius.fun</span><span class="c-green">Fourmeme</span><span class="c-blue">OpenFour</span><span class="c-pink">Cubepeg</span><span class="c-blue">Liquid Dex</span><span class="c-yellow">Gopius Creator</span><span class="c-yellow">Gopius Skill</span><span class="c-blue">Tapeout</span><span class="c-yellow">X Mode</span><span class="c-purple">Flap Tax</span><span class="c-green">Flap PoolLaunch</span><span class="c-yellow">Flap</span>
+    </div>
+    <div class="filterSec"><b>报价代币</b><button class="filterAll" type="button">取消全选</button></div>
+    <div class="filterChips">
+      <span class="c-yellow">BNB</span><span class="c-yellow">USD1</span><span class="c-green">FORM</span><span class="c-yellow">U</span><span class="c-green">USDT</span><span class="c-blue">USDC</span><span class="c-yellow">ASTER</span><span class="c-yellow">CAKE</span><span class="c-blue">BTCB</span>
+    </div>
+    <div class="filterFoot"><span>导入/导出</span><span class="grow"></span><span>保存</span><button id="filterApply" class="primary" type="button">应用</button></div>
+  </div>
+</div>
+
+<div class="scrim" id="join" hidden>
+  <form class="modal card" id="joinForm">
+    <h1><img class="joinLogo" src="/logo.svg" alt="">狙击鸭</h1>
+    <p>练习 meme 买入速度：从推文出现到点中第一个币的买入按钮，每一步都不能少。取个昵称就能上天梯。</p>
+    <input id="nick" maxlength="16" placeholder="昵称（2 到 16 个字符）" autocomplete="off">
+    <div class="err" id="joinErr"></div>
+    <button class="primary big" type="submit">进入战壕</button>
+  </form>
+</div>
+
+
+<div class="scrim" id="result" hidden><div class="modal card result" id="resultBody"></div></div>
+<div class="scrim" id="detail" hidden><div class="modal card detail" id="detailBody"></div></div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
