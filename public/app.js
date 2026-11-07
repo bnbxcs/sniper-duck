@@ -20,7 +20,7 @@ const SPLIT_COLORS = { lens: '#6aa9ff', copy: '#a58bff', back: '#5e626a', filter
 const REASON_TEXT = { not_first: '买到了后来出现的同名币，不是第一个', not_listed: '买到了不相关的币' };
 const STATUS_TEXT = { success: '成功', wrong_token: '买错', timeout: '超时', review: '待审核', abandoned: '放弃' };
 const VIDEO_REF_MS = 16_000;
-const ALERT_HANDLES = new Set(['cz_binance', 'heyibinance']);
+const RED_HANDLES = new Set(['cz_binance', 'heyibinance']);
 
 // Browsers only allow sound after a user gesture, so the context is opened when a round is started.
 let audio = null;
@@ -225,7 +225,7 @@ function fans() {
 
 function addTweet({ id, author, handle, initial, color, text, image, kol, reply, quote, followers }) {
   const el = document.createElement('div');
-  el.className = kol ? `tw kol${ALERT_HANDLES.has(handle) ? ' alert' : ''}` : 'tw';
+  el.className = kol ? `tw kol${RED_HANDLES.has(handle) ? ' alert' : ''}` : 'tw';
   el.innerHTML = `<div class="who"><div class="av" style="background:${esc(color)}">${esc(initial)}</div>
       <div class="whoT"><b>${esc(author)}</b><span class="pen">${ICON.pencil}</span>
         <div class="sub">@${esc(handle)} ${kol ? '模拟推文' : `${ICON.trophy}${ICON.people}${esc(followers ?? fans())}`}</div></div>
@@ -317,7 +317,7 @@ function showTarget() {
   if (S.phase !== 'idle') return;
   const { target } = S.round;
   addTweet({ ...target, kol: true });
-  if (ALERT_HANDLES.has(target.handle)) playAlert();
+  playAlert(); // Every target tweet sounds, so no round starts with a slower cue than another.
   // Start the clock on the frame the tweet is actually painted.
   const start = () => {
     if (S.phase !== 'idle' || S.round?.target !== target) return;
