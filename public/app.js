@@ -158,7 +158,7 @@ function cardHtml(t) {
       <span class="quote ${amber ? 'amber' : ''}">BNB | →BNB</span>
       <div class="chips"><span class="cp ${pct > 30 ? 'warn' : ''}">${ICON.hat}${pct}%</span>${seed % 2 ? `<span class="cp ds">DS <u>${seed % 90 + 1}d</u></span>` : ''}</div>
     </div>
-    <div class="zone" data-buy="${esc(t.id)}"><span class="mcv">MC<b>$${esc(t.mc)}K</b></span><span class="bz">${ICON.bolt}0.48 BNB</span></div>
+    <div class="zone" data-buy="${esc(t.id)}"><span class="mcv">MC<b>$${esc(t.mc)}K</b></span><span class="bz">${ICON.bolt}2 BNB</span></div>
   </div>`;
 }
 
