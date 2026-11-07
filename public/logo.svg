@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="狙击鸭">
+  <defs>
+    <clipPath id="frame"><rect width="512" height="512" rx="96"/></clipPath>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f9e95"/>
+      <stop offset="1" stop-color="#17615f"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#frame)" stroke-linejoin="round" stroke-linecap="round">
+    <rect width="512" height="512" fill="url(#sky)"/>
+    <path d="M0 330 L70 270 L140 300 L225 230 L310 285 L400 225 L512 300 V512 H0z" fill="#124f50"/>
+
+    <!-- Duck -->
+    <path d="M58 512 C40 410 44 300 74 215 C100 140 168 104 228 118 C296 134 322 196 318 268 C314 350 290 440 268 512z" fill="#ff8a2b" stroke="#141414" stroke-width="13"/>
+    <path d="M160 116 C150 92 156 66 176 58 C188 76 192 96 192 112 M192 112 C192 88 204 68 224 66 C230 86 226 106 218 118" fill="#ff8a2b" stroke="#141414" stroke-width="13"/>
+    <!-- Aiming eye, squeezed shut -->
+    <circle cx="176" cy="216" r="50" fill="#ffa24d" stroke="#141414" stroke-width="10"/>
+    <path d="M128 212 Q176 196 224 226" fill="none" stroke="#141414" stroke-width="10"/>
+
+    <!-- Rifle -->
+    <path d="M196 410 L300 344 L512 268 V330 L340 398 L252 462 Q214 470 196 410z" fill="#8a5427" stroke="#141414" stroke-width="13"/>
+    <path d="M300 338 L512 262" stroke="#2a3038" stroke-width="30"/>
+    <path d="M300 338 L512 262" stroke="#46505c" stroke-width="10"/>
+    <path d="M352 268 v46 M414 244 v46" stroke="#141414" stroke-width="20"/>
+
+    <!-- Scope, up against the eye -->
+    <path d="M258 214 L416 170 L428 232 L272 276z" fill="#39424e" stroke="#141414" stroke-width="13"/>
+    <path d="M410 150 L478 130 Q504 182 494 230 L428 250z" fill="#2a3038" stroke="#141414" stroke-width="13"/>
+    <ellipse cx="478" cy="186" rx="24" ry="50" transform="rotate(-14 478 186)" fill="#bff2e6" stroke="#141414" stroke-width="10"/>
+    <path d="M478 142 V230 M456 192 L500 180" stroke="#141414" stroke-width="5"/>
+    <circle cx="478" cy="186" r="7" fill="#e5484d"/>
+
+    <!-- Bill, resting on the stock -->
+    <path d="M204 276 C226 252 268 256 290 288 C312 322 306 362 276 368 C238 374 196 340 190 306 C188 294 194 284 204 276z" fill="#ffc06b" stroke="#141414" stroke-width="13"/>
+    <circle cx="240" cy="292" r="7" fill="#141414"/>
+
+    <!-- Leaves -->
+    <path d="M-10 512 C30 430 92 408 150 420 C138 470 96 512 60 530z" fill="#1f7a4d" stroke="#141414" stroke-width="11"/>
+    <path d="M120 530 C150 470 208 446 262 456 C254 500 226 530 190 545z" fill="#2c9460" stroke="#141414" stroke-width="11"/>
+    <path d="M-16 60 C30 62 62 96 72 150 C30 142 -4 112 -16 84z" fill="#1f7a4d" stroke="#141414" stroke-width="11"/>
+  </g>
+</svg>
